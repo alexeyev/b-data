@@ -2,6 +2,8 @@
 
 import urllib2
 import json
+import time
+
 
 def get_wall_posts_json(domain, offset, count):
     req = urllib2.Request('https://api.vk.com/method/wall.get?domain=' + domain + '&count=' + str(count) + '&offset=' + str(offset))
@@ -14,7 +16,7 @@ def get_wall_posts_json(domain, offset, count):
 if __name__ == '__main__':
     name = 'baneks'
     fr = 0
-    to = 800
+    to = 8000
     step = 90
     
     with open("all_posts.tsv", "w+") as res_file:      
